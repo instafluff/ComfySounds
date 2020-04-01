@@ -1,0 +1,33 @@
+{
+  "name": "comfysounds",
+  "version": "1.0.0",
+  "description": "The Comfiest Ambient Sounds Generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/instafluff/ComfySounds.git"
+  },
+  "keywords": [
+    "Instafluff",
+    "Ambience",
+    "Ambient",
+    "Sounds",
+    "Sound",
+    "Noise",
+    "Generator",
+    "Peaceful",
+    "SFX"
+  ],
+  "author": "Instafluff",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/instafluff/ComfySounds/issues"
+  },
+  "homepage": "https://github.com/instafluff/ComfySounds#readme",
+  "dependencies": {
+    "webwebweb": "^1.1.10"
+  }
+}
