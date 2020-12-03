@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+  </head>
+  <body>
+    <h1>ComfySounds</h1>
+	<p>The Comfiest CHRISTMAS Ambience Generator!</p>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="https://cdn.jsdelivr.net/npm/howler@2.1.3/dist/howler.min.js"></script>
+	<script>
+		const soundDB = {
+			xmas0: {
+				src: "web/sounds/christmas/170531__cognito-perceptu__merry-christmas-sung-higher.wav",
+				volume: 1.0,
+				rate: 1.0,
+			},
+			xmas1: {
+				src: "web/sounds/christmas/328387__audiorichter__christmas-elf-talking.wav",
+				volume: 1.0,
+				rate: 1.0,
+			},
+			xmas2: {
+				src: "web/sounds/christmas/349855__airmedia__christmas-sound-effects-merry-christmas-santa.mp3",
+				volume: 1.0,
+				rate: 1.0,
+				// rate: 4.0,
+			},
+			xmas3: {
+				src: "web/sounds/christmas/407692__170134__christmas-cracker.wav",
+				volume: 1.0,
+				rate: 1.0,
+				// rate: 4.0,
+			},
+			xmas4: {
+				src: "web/sounds/christmas/448511__faranta__sleighbells2.flac",
+				volume: 1.0,
+				rate: 1.0,
+				// rate: 4.0,
+			},
+			xmas6: {
+				src: "web/sounds/christmas/536245__theartguild__ho-ho-ho-merry-christmas.mp3",
+				volume: 1.0,
+				rate: 1.0,
+				// rate: 4.0,
+			},
+			xmas7: {
+				src: "web/sounds/christmas/546550__funnyvoices__merry-christmas.wav",
+				volume: 1.0,
+				rate: 1.0,
+				// rate: 4.0,
+			},
+			xmas8: {
+				src: "web/sounds/christmas/412534__airmedia__air-media-christmas-sound.wav",
+				volume: 1.0,
+				rate: 1.0,
+				// rate: 4.0,
+			},
+		};
+		// let sounds = {};
+		// Object.keys( soundDB ).forEach( s => {
+		// 	sounds[ s ] = new Howl({
+		// 		src: [ soundDB[ s ].src ]
+		// 	});
+		// });
+		let sounds = Object.keys( soundDB ).map( s => {
+			return new Howl({
+				src: [ soundDB[ s ].src ]
+			});
+		});
+
+		setInterval( () => {
+			let select = getRandomInt( 200 );
+			if( select < sounds.length ) {
+				sounds[ select ].play();
+				console.log( "played " + select );
+			}
+		}, 100 );
+
+		function getRandomInt( max, min = 0 ) {
+			return Math.floor( max * Math.random() + min );
+		}
+	</script>
+  </body>
+</html>
